@@ -1,0 +1,181 @@
+{
+  "_doc": "roommates-india preset. Setup fills in people (short-names), who denies what, away dates and the home pincode. Rules list SHARED items plus generic guards; everything else is personal. First match wins.",
+  "preset": "roommates-india",
+  "version": 1,
+  "you": "ME",
+  "buckets": {
+    "grocery": {
+      "members": [],
+      "label": "Kitchen"
+    },
+    "household": {
+      "members": [],
+      "label": "House"
+    },
+    "personal": {
+      "members": [
+        "ME"
+      ],
+      "label": "Personal"
+    },
+    "review": {
+      "members": null,
+      "label": "Needs a decision"
+    }
+  },
+  "denies": {
+    "_doc": "Who opts out of what: a category (e.g. meat_seafood) or a whole pool (@grocery). Deny always wins."
+  },
+  "absences": {
+    "_doc": "Inclusive IST date ranges someone wasn't home; null = open start/end (e.g. before moving in)."
+  },
+  "review_flags": {
+    "home_pincode": null,
+    "flag_other_pincode": true,
+    "flag_unknown_pincode": false,
+    "high_value_shared_rupees": 500,
+    "flag_refunds": true
+  },
+  "fee_policy": "Order-level fees and discounts are allocated to items in proportion to their net line totals, then follow each item's bucket.",
+  "overrides": {
+    "by_name": {},
+    "by_category": {},
+    "by_order_item": {}
+  },
+  "rules": [
+    {
+      "category": "ice_cream",
+      "split": "personal",
+      "pattern": "ice ?cream|cornetto|magnum|get-a-way|cream bell vanilla sandwich|sugar free cone",
+      "_note": "Guard: generic words that would otherwise match a shared pattern (e.g. 'Dairy Milk' chocolate). Buyer pays."
+    },
+    {
+      "category": "sweets",
+      "split": "personal",
+      "pattern": "chocolate|choco|munch|snickers|kitkat|cadbury|nutella|brownie|\\bcake\\b|cheesecake|marshmallow|chikki|laddu",
+      "_note": "Guard: generic words that would otherwise match a shared pattern (e.g. 'Dairy Milk' chocolate). Buyer pays."
+    },
+    {
+      "category": "biscuits",
+      "split": "personal",
+      "pattern": "cookie|biscuit|bourbon|oreo|hide & seek",
+      "_note": "Guard: generic words that would otherwise match a shared pattern (e.g. 'Dairy Milk' chocolate). Buyer pays."
+    },
+    {
+      "category": "snacks",
+      "split": "personal",
+      "pattern": "chips|kurkure|namkeen|puffs|roasted masala peanuts|vada pav",
+      "_note": "Guard: generic words that would otherwise match a shared pattern (e.g. 'Dairy Milk' chocolate). Buyer pays."
+    },
+    {
+      "category": "cold_drinks",
+      "split": "personal",
+      "pattern": "coke|coca-cola|sprite|schweppes|tonic water|red bull|monster|powerade|soft drink|club soda|cold coffee",
+      "_note": "Guard: generic words that would otherwise match a shared pattern (e.g. 'Dairy Milk' chocolate). Buyer pays."
+    },
+    {
+      "category": "instant_noodles",
+      "split": "grocery",
+      "pattern": "noodles"
+    },
+    {
+      "category": "cheese_processed",
+      "split": "grocery",
+      "pattern": "cheese ?-? ?slices|processed cheese|go four cheese"
+    },
+    {
+      "category": "cheese_premium",
+      "split": "personal",
+      "pattern": "cheddar|feta|cream cheese|parmesan",
+      "_note": "Guard: generic words that would otherwise match a shared pattern (e.g. 'Dairy Milk' chocolate). Buyer pays."
+    },
+    {
+      "category": "paneer",
+      "split": "grocery",
+      "pattern": "paneer"
+    },
+    {
+      "category": "drinks_personal",
+      "split": "personal",
+      "pattern": "oat milk|oat drink|yakult|coconut water",
+      "_note": "Guard: generic words that would otherwise match a shared pattern (e.g. 'Dairy Milk' chocolate). Buyer pays."
+    },
+    {
+      "category": "buttermilk",
+      "split": "grocery",
+      "pattern": "buttermilk"
+    },
+    {
+      "category": "yogurt",
+      "split": "personal",
+      "pattern": "greek yog|skyr",
+      "_note": "Guard: generic words that would otherwise match a shared pattern (e.g. 'Dairy Milk' chocolate). Buyer pays."
+    },
+    {
+      "category": "nuts",
+      "split": "grocery",
+      "pattern": "cashew|almond",
+      "always": true
+    },
+    {
+      "category": "cleaning",
+      "split": "household",
+      "pattern": "detergent|surf excel|handwash|dettol|tissue|broom|scotch-brite|bottle cleaner|kitchen towel|kitchen roll|washing machine|mosquito|mortein|sanitizer"
+    },
+    {
+      "category": "home",
+      "split": "household",
+      "pattern": "matchbox|multi plug|socket|idli maker|baking sheets|glasses"
+    },
+    {
+      "category": "meat_masala",
+      "split": "grocery",
+      "pattern": "chicken masala",
+      "always": true
+    },
+    {
+      "category": "spices",
+      "split": "grocery",
+      "pattern": "masala|\\bsalt\\b|pepper|kasoori methi|ginger garlic paste",
+      "always": true
+    },
+    {
+      "category": "meat_seafood",
+      "split": "grocery",
+      "pattern": "chicken|prawns|goat|mutton|fish|sausage"
+    },
+    {
+      "category": "pantry",
+      "split": "grocery",
+      "always": true,
+      "pattern": "atta|rice|\\bdal\\b|rajma|chana|besan|suji|sooji|rava|(mustard|olive|sunflower|groundnut|rice bran|refined|cooking) oil|extra virgin|ghee|soya chunks|pasta|pickle|papad|singdana|raw peanut",
+      "_note": "Long-lasting staples: split among everyone even if away."
+    },
+    {
+      "category": "dairy",
+      "split": "grocery",
+      "pattern": "milk|curd|dahi|butter|ghee|cream"
+    },
+    {
+      "category": "eggs",
+      "split": "grocery",
+      "pattern": "eggs"
+    },
+    {
+      "category": "bakery_fresh",
+      "split": "grocery",
+      "pattern": "bread|\\bpav\\b|batter|parota"
+    },
+    {
+      "category": "fruit_veg",
+      "split": "grocery",
+      "pattern": "onion|tomato|potato|garlic|ginger|chilli|coriander|mint leaves|curry leaves|cucumber|beetroot|carrot|cabbage|gourd|brinjal|mushroom|broccoli|spinach|palak|lettuce|parsley|beans|radish|lemon|banana|apple|guava|melon|pineapple|\\bplum\\b|\\bpear\\b|^mango\\b|\\bmango (raw|dasheri|banganapalli|alphonso|totapuri)|coconut"
+    },
+    {
+      "category": "unlisted",
+      "split": "personal",
+      "pattern": ".",
+      "_note": "Anything not matched above is personal. Never add rules that name sensitive personal items."
+    }
+  ]
+}

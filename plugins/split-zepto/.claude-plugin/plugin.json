@@ -1,0 +1,19 @@
+{
+  "name": "split-zepto",
+  "description": "Split Zepto grocery orders fairly with flatmates: shared Kitchen and House pools, who was home, opt-outs, and privacy-first outputs.",
+  "version": "0.1.0",
+  "author": {
+    "name": "split-zepto contributors"
+  },
+  "keywords": [
+    "zepto",
+    "groceries",
+    "flatmates",
+    "roommates",
+    "split",
+    "expenses",
+    "india"
+  ],
+  "license": "GPL-3.0-or-later",
+  "repository": "https://github.com/shivansh2301/split-zepto"
+}

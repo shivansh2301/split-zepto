@@ -1,0 +1,12 @@
+{
+  "name": "split-zepto",
+  "description": "Split Zepto grocery orders with flatmates.",
+  "owner": { "name": "split-zepto contributors" },
+  "plugins": [
+    {
+      "name": "split-zepto",
+      "source": "./plugins/split-zepto",
+      "description": "Split Zepto grocery orders fairly with flatmates, privately."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# Personal data: never commit. The repo ships code, presets and docs only.
+data/
+*.csv
+rules.json
+rules.json.bak
+*.jsonl
+house.json
+me.json
+out/
+inbox/
+
+# The prototype's working notes mention this household's details
+zepto-split-plan.md
+
+# Python cache
+__pycache__/
+
+# Local copy of Zepto's MCP README (third-party doc, not part of this repo)
+mcp/
+contribution.json
+
+# Release builds (attach to GitHub Releases, do not commit)
+dist/
